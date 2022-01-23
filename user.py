@@ -68,3 +68,45 @@ class User:
         return cls.user_list
 
         return False
+
+class Credentials:
+    '''
+    class that generates new instances of credentials
+    '''
+    accounts = []
+    
+    def __init__(self,account_username,account_name,account_password):
+        '''
+        __init__ method that helps us define properties for our object
+        '''
+        self.account_username = account_username
+        self.account_name = account_name
+        self.account_password = account_password
+
+    def save_account(self):
+        '''
+        saves user info into the accounts
+        '''
+        Credentials.accounts.append(self)
+
+    def delete_account(self):
+        '''
+        delete user info from the accounts
+        '''
+        Credentials.accounts.remove(self)
+
+    @classmethod
+    def display_account(cls):
+        '''
+        method that retuns a list of the accounts
+        '''
+        for acount in cls.accounts:
+            return cls.accounts
+    @classmethod
+    def find_by_username(cls,user_name):
+        '''
+        Method that takes in a username and returns a name that matches that username
+        '''
+        for account in cls.account:
+            if account.account_username == user_name:
+                return account
