@@ -19,3 +19,9 @@ def del_user(user):
     Function to del user
     '''
     user.del_user()
+
+def find_user(user_name):
+    '''
+    Function that finds a user by username and returns the user
+    '''
+    return User.find_by_username(user_name)
