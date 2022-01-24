@@ -36,8 +36,8 @@ it on your own repository.
 
 ## Running the applicatio 
 * Open the cloned file in terminal and run
-`$ chmod +x run.py`
-`$ ./run.py`
+* `$ chmod +x run.py`
+* `$ ./run.py`
 
 [Go Back to the top](#password-locker)
 
