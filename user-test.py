@@ -34,7 +34,7 @@ class TestUser(unittest.TestCase):
         test_delete_user to test if we can remove a user from our user list
         '''
         self.new_user.save_user()
-        test_user = User("Test","user","0712345678","test@user.com") # new user
+        test_user = User("Test","user","1234") # new user
         test_user.save_user()
 
         self.new_user.delete_user()# Deleting a user object
@@ -46,7 +46,7 @@ class TestUser(unittest.TestCase):
         '''
 
         self.new_user.save_user()
-        test_user = User("Test","user","0711223344","test@user.com") # new user
+        test_user = User("Test","user","1234") # new user
         test_user.save_user()
 
         found_user = User.find_by_user_name("abcd")
@@ -59,7 +59,7 @@ class TestUser(unittest.TestCase):
         '''
 
         self.new_user.save_user()
-        test_user = User("Test","user","0711223344","test@user.com") # new user
+        test_user = User("Test","user","1234") # new user
         test_user.save_user()
 
         user_exists = User.user_exist("abcd")
