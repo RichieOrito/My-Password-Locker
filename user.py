@@ -100,7 +100,7 @@ class Credentials:
         '''
         method that retuns a list of the accounts
         '''
-        for acount in cls.accounts:
+        for account in cls.accounts:
             return cls.accounts
     @classmethod
     def find_by_username(cls,user_name):
