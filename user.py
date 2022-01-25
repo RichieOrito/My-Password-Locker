@@ -1,3 +1,7 @@
+import random
+import string
+
+
 class User:
     '''
     Class that generates new instances of users
@@ -47,18 +51,18 @@ class User:
             if user.user_name == user_name:
                 return user
 
-    @classmethod
-    def user_exist(cls,user_name):
-        '''
-        Method that checks if a user_name exists from the user list.
-        Args:
-            user_name: User name to search if it exists
-        Returns :
-            Boolean: True or false depending if the user exists
-        '''
-        for user in cls.user_list:
-            if user.user_name == user_name:
-                    return True
+    # @classmethod
+    # def user_exist(cls,user_name):
+    #     '''
+    #     Method that checks if a user_name exists from the user list.
+    #     Args:
+    #         user_name: User name to search if it exists
+    #     Returns :
+    #         Boolean: True or false depending if the user exists
+    #     '''
+    #     for user in cls.user_list:
+    #         if user.user_name == user_name:
+    #                 return True
 
     @classmethod
     def display_users(cls):
@@ -100,13 +104,19 @@ class Credentials:
         '''
         method that retuns a list of the accounts
         '''
-        for account in cls.accounts:
-            return cls.accounts
+        return cls.accounts
     @classmethod
-    def find_by_username(cls,user_name):
+    def find_account(cls,account_name):
         '''
-        Method that takes in a username and returns a name that matches that username
+        Method that takes in a account_name and returns an account that matches that account_name
         '''
-        for account in cls.account:
-            if account.account_username == user_name:
-                return account
+        for credentials in cls.accounts:
+            if credentials.account_name == account_name:
+                return credentials
+
+    def generatePassword(stringLength=8):
+        '''
+        Method that generates a password 
+        '''
+        account_password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "xoxo@123"
+        return ''.join(random.choice(account_password) for i in range(stringLength))
